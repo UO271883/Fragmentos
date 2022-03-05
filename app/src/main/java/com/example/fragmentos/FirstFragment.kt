@@ -45,7 +45,7 @@ class FirstFragment : Fragment() {
         binding.buttonFirst.setOnClickListener {
             setFragmentResult(requestkeyf2f, bundleOf(TAG to "Saludos desde el primer fragmento"))
         }
-        parentFragmentManager.setFragmentResultListener(requestkeyc2f, this) { _, bundle ->
+        childFragmentManager.setFragmentResultListener(requestkeyc2f, this) { _, bundle ->
             binding.textView.text = bundle.getString(TAG2)
         }
         return binding.root
